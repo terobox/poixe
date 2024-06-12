@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poixe</title>
+    <link rel="icon" href="fav.ico?ver=1.1">
+    <meta name="description" content="面向所有人的开放智能体验平台 - Platform of Open Intelligence eXperiences for Everyone.">
+    <meta name="keywords" content="free, chatgpt, openai, gemini, claude, chatbox, chatgpt-next-web, lobehub, opensource, github">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://poixe.com/">
+    <meta property="og:title" content="Poixe - 开放智能体验平台">
+    <meta property="og:description" content="面向所有人的开放智能体验平台 - Platform of Open Intelligence eXperiences for Everyone.">
+    <meta property="og:image" content="https://gptocean.com/assets/files/2024-06-12/1718201220-226692-poixe-poster.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://poixe.com/">
+    <meta name="twitter:title" content="Poixe - 开放智能体验平台">
+    <meta name="twitter:description" content="面向所有人的开放智能体验平台 - Platform of Open Intelligence eXperiences for Everyone.">
+    <meta name="twitter:image" content="https://gptocean.com/assets/files/2024-06-12/1718201220-226692-poixe-poster.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media (max-width: 640px) {
+            #sidebar {
+                width: 100%;
+                position: fixed;
+                top: 3rem;
+                left: 0;
+                height: calc(100vh - 3rem); /* 更新为基于视窗的高度并减去顶部栏高度 */
+                overflow-y: auto; /* 添加滚动条 */
+                z-index: 10;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            #sidebar.open {
+                transform: translateX(0);
+            }
+        }
+    
+        #sidebar {
+            overflow-y: auto; /* 添加滚动条 */
+            height: calc(100vh - 5rem); /* 将高度设置为与右侧内容一致 */
+            scrollbar-width: thin; /* Firefox: 细滚动条 */
+            scrollbar-color: rgba(0, 0, 0, 0.1) transparent; /* 滚动条和轨道颜色 */
+        }
+    
+        #sidebar:hover {
+            scrollbar-color: rgba(0, 0, 0, 0.3) transparent; /* 悬停时滚动条和轨道颜色 */
+        }
+    
+        /* 添加自定义滚动条样式 */
+        #sidebar::-webkit-scrollbar {
+            width: 8px; /* 滚动条宽度 */
+            height: 8px; /* 横向滚动条高度 */
+        }
+    
+        #sidebar::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.1); /* 滑块默认颜色调浅 */
+            border-radius: 4px; /* 滑块圆角 */
+            min-height: 20px; /* 设置滑块的最小高度 */
+        }
+    
+        #sidebar::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 0, 0, 0.3); /* 悬停时滑块颜色 */
+        }
+    
+        #sidebar::-webkit-scrollbar-track {
+            background: transparent; /* 滚动条轨道颜色设为透明 */
+            border-radius: 4px; /* 滚动条轨道圆角 */
+        }
+    
+        /* 去掉上下箭头 */
+        #sidebar::-webkit-scrollbar-button {
+            display: none; /* 隐藏滚动条上的按钮 */
+        }
+
+        
+        /**/
+        #loading {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #666;
+        }
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            width: 100%;
+            transition: background-color 0.3s, box-shadow 0.3s; /* 添加过渡效果 */
+        }
+        
+        .sidebar-link a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            padding: 8px;
+            width: 100%;
+        }
+        
+        .sidebar-link:hover {
+            background-color: #e0e0e0;
+            box-shadow: none; /* 去除阴影 */
+        }
+        
+        /* 添加Google或Apple风格的按钮样式 */
+        #toggle-sidebar {
+            background-color: #fff; /* 使用纯白色背景 */
+            color: #333; /* 按钮内图标使用深色 */
+            border: 1px solid #ccc; /* 添加边框 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 添加轻微阴影 */
+            border-radius: 4px; /* 圆角 */
+        }
+        
+        #toggle-sidebar:hover {
+            background-color: #f8f8f8; /* 鼠标悬停时背景色变化 */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 调整阴影大小 */
+        }
+
+
+        .link-content {
+            display: flex;
+            align-items: center;
+            flex-grow: 1; /* Allow the content to grow and fill the space */
+        }
+        .icon-left, .icon-right {
+            height: 20px;
+            vertical-align: middle;
+        }
+        .icon-left {
+            margin-right: 8px;
+        }
+        .icon-right {
+            border-radius: 50%; /* Make the icon circular */
+            overflow: hidden; /* Ensure no part of the icon leaks outside the border */
+        }
+        /*loading*/
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(0.6);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .loading-char {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4285F4; /* 默认颜色，可以根据需要修改 */
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        
+        .char1 { animation-delay: -0.32s; color: #4285F4; } /* 蓝色 */
+        .char2 { animation-delay: -0.24s; color: #DB4437; } /* 红色 */
+        .char3 { animation-delay: -0.16s; color: #F4B400; } /* 黄色 */
+        .char4 { animation-delay: -0.08s; color: #0F9D58; } /* 绿色 */
+        .char5 { color: #4285F4; } /* 蓝色，可重复首字母颜色 */
+
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen">
+    <header class="bg-gray-900 text-white p-2 flex items-center space-x-4 sticky top-0 w-full z-20">
+        <div class="flex-none">
+            <button id="toggle-sidebar" class="p-2 rounded bg-gray-700 hover:bg-gray-600 lg:hidden">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="text-xl font-bold flex-grow" style="height: 24px; line-height: 44px;">
+            <a href="/"><img src="assets/logo.png?ver=1.1" alt="Logo" style="max-height: 100%; width: auto;"></a>
+        </div>
+
+        <nav class="space-x-4 hidden lg:flex">
+            <!-- Navigation links can be uncommented and used here -->
+        </nav>
+    </header>
+    <div class="flex flex-col lg:flex-row p-4 space-y-4 lg:space-y-0 lg:space-x-4">
+        <aside id="sidebar" class="bg-white p-4 w-full lg:w-48 lg:flex-none transition-all duration-300 rounded shadow-md">
+            <ul id="sidebar-links" class="space-y-2">
+                <!-- Links will be dynamically inserted here -->
+            </ul>
+        </aside>
+        <main class="flex-grow relative">
+            <!--<div id="loading">Loading...</div>-->
+        <div id="loading">
+            <span class="loading-char char1">P</span>
+            <span class="loading-char char2">O</span>
+            <span class="loading-char char3">I</span>
+            <span class="loading-char char4">X</span>
+            <span class="loading-char char5">E</span>
+        </div>
+
+
+            <iframe id="main-iframe" name="main-iframe" src="https://chat1201.openkey.cloud/" class="w-full h-[calc(100vh-5rem)] bg-white rounded shadow-md"></iframe>
+        </main>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('tools.json')
+                .then(response => response.json())
+                .then(data => {
+                    const sidebarLinks = document.getElementById('sidebar-links');
+                    data.forEach(tool => {
+                        const li = document.createElement('li');
+                        li.className = 'sidebar-link flex items-center p-2 rounded bg-gray-200 hover:bg-gray-300';
+        
+                        // 创建链接
+                        const a1 = document.createElement('a');
+                        a1.href = tool.url;
+                        a1.target = tool.target;
+                        a1.className = 'flex items-center';
+                        a1.innerHTML = `<img src="${tool.iconLeft}" alt="Icon" class="icon-left mr-2">${tool.name}`;
+        
+                        // 将链接添加到列表项
+                        li.appendChild(a1);
+                        sidebarLinks.appendChild(li);
+                    });
+        
+                    // 在元素被添加到DOM后，添加点击事件监听
+                    document.querySelectorAll('.sidebar-link').forEach(link => {
+                        link.addEventListener('click', function() {
+                            sidebar.classList.remove('open');
+                            toggleButton.innerHTML = '<i class="fas fa-bars"></i>'; // Reset to menu icon
+                            loading.style.display = 'block'; // Show loading
+                            iframe.onload = function() {
+                                loading.style.display = 'none'; // Hide loading when iframe has loaded
+                            };
+                        });
+                    });
+                }).catch(error => console.error('Error loading the tools:', error));
+        });
+
+    </script>
+
+    <script>
+        const toggleButton = document.getElementById('toggle-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        const iframe = document.getElementById('main-iframe');
+        const loading = document.getElementById('loading');
+
+        toggleButton.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            toggleButton.innerHTML = sidebar.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', function() {
+                sidebar.classList.remove('open');
+                toggleButton.innerHTML = '<i class="fas fa-bars"></i>'; // Reset to menu icon
+                loading.style.display = 'block'; // Show loading
+                iframe.onload = function() {
+                    loading.style.display = 'none'; // Hide loading when iframe has loaded
+                };
+            });
+        });
+        
+        // 显示加载动画
+        loading.style.display = 'block';
+        
+        // 当iframe加载完成时隐藏动画
+        iframe.onload = function() {
+            loading.style.display = 'none';
+        };
+
+
+    </script>
+</body>
+</html>
