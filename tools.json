@@ -22,7 +22,7 @@
     },
     {
         "name": "LobeChat",
-        "url": "https://chat-preview.lobehub.com/chat",
+        "url": "https://lobe.poixe.com/chat",
         "iconLeft": "/assets/list/lobechat.png",
         "iconRight": "assets/github.svg",
         "target": "main-iframe"
@@ -43,7 +43,7 @@
     },
     {
         "name": "Tiktokenizer",
-        "url": "https://tiktokenizer.vercel.app/",
+        "url": "https://tiktokenizer.poixe.com/",
         "iconLeft": "/assets/list/tiktokenizer.png",
         "iconRight": "assets/github.svg",
         "target": "main-iframe"
