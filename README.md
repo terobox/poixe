@@ -28,6 +28,7 @@ Platform of Open Intelligence eXperiences for Everyone, with ChatGPT-Next-Web, C
 - 全静态网页设计，简单部署
 - 精心设计的 UI，符合人体工程学的UI设计舒适且实用
 - 隐私安全，所有数据保存在用户浏览器本地
+- 针对部分工具做了代理，优化访问速度
 
 ## Supported
 
