@@ -2,35 +2,56 @@
     {
         "name": "OpenKey",
         "url": "https://chat1201.openkey.cloud/",
-        "iconLeft": "https://openkey.cloud/fakelogo.png",
+        "iconLeft": "/assets/list/openkey.png",
         "iconRight": "assets/github.svg",
         "target": "main-iframe"
     },
     {
         "name": "NextChat",
         "url": "https://app.nextchat.dev/",
-        "iconLeft": "https://avatars.githubusercontent.com/u/153288546?s=48&v=4",
+        "iconLeft": "/assets/list/nextweb.png",
         "iconRight": "assets/github.svg",
         "target": "main-iframe"
     },
     {
         "name": "ChatBox",
         "url": "https://web.chatboxai.app/",
-        "iconLeft": "https://web.chatboxai.app/7a1daa12c28b71030fcb.png",
+        "iconLeft": "/assets/list/chatbox.webp",
         "iconRight": "assets/github.svg",
         "target": "main-iframe"
     },
     {
         "name": "LobeChat",
         "url": "https://chat-preview.lobehub.com/chat",
-        "iconLeft": "https://chat-preview.lobehub.com/icons/icon-192x192.png",
+        "iconLeft": "/assets/list/lobechat.png",
         "iconRight": "assets/github.svg",
         "target": "main-iframe"
     },
     {
         "name": "Dooy",
         "url": "https://vercel.ddaiai.com/",
-        "iconLeft": "https://raw.githubusercontent.com/Dooy/chatgpt-web-midjourney-proxy/main/src/assets/avatar.jpg",
+        "iconLeft": "/assets/list/dooy.png",
+        "iconRight": "assets/github.svg",
+        "target": "main-iframe"
+    },
+    {
+        "name": "Translator",
+        "url": "https://translator.lance.moe/",
+        "iconLeft": "/assets/list/translator.png",
+        "iconRight": "assets/github.svg",
+        "target": "main-iframe"
+    },
+    {
+        "name": "Tiktokenizer",
+        "url": "https://tiktokenizer.vercel.app/",
+        "iconLeft": "/assets/list/tiktokenizer.png",
+        "iconRight": "assets/github.svg",
+        "target": "main-iframe"
+    },
+    {
+        "name": "BigAGI",
+        "url": "https://get.big-agi.com/",
+        "iconLeft": "/assets/list/bigagi.webp",
         "iconRight": "assets/github.svg",
         "target": "main-iframe"
     }
