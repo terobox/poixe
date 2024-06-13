@@ -21,7 +21,7 @@
         "target": "main-iframe"
     },
     {
-        "name": "LobeHub",
+        "name": "LobeChat",
         "url": "https://chat-preview.lobehub.com/chat",
         "iconLeft": "https://chat-preview.lobehub.com/icons/icon-192x192.png",
         "iconRight": "assets/github.svg",
