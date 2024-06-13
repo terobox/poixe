@@ -2,140 +2,35 @@
     {
         "name": "OpenKey",
         "url": "https://chat1201.openkey.cloud/",
-        "iconLeft": "assets/poixe.svg",
+        "iconLeft": "https://openkey.cloud/fakelogo.png",
+        "iconRight": "assets/github.svg",
+        "target": "main-iframe"
+    },
+    {
+        "name": "NextChat",
+        "url": "https://app.nextchat.dev/",
+        "iconLeft": "https://avatars.githubusercontent.com/u/153288546?s=48&v=4",
         "iconRight": "assets/github.svg",
         "target": "main-iframe"
     },
     {
         "name": "ChatBox",
         "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
-        "iconRight": "assets/github.svg",
-        "target": "main-iframe"
-    },
-    {
-        "name": "ChatBox",
-        "url": "https://web.chatboxai.app/",
-        "iconLeft": "assets/poixe.svg",
+        "iconLeft": "https://web.chatboxai.app/7a1daa12c28b71030fcb.png",
         "iconRight": "assets/github.svg",
         "target": "main-iframe"
     },
     {
         "name": "LobeHub",
         "url": "https://chat-preview.lobehub.com/chat",
-        "iconLeft": "assets/poixe.svg",
+        "iconLeft": "https://chat-preview.lobehub.com/icons/icon-192x192.png",
+        "iconRight": "assets/github.svg",
+        "target": "main-iframe"
+    },
+    {
+        "name": "Dooy",
+        "url": "https://vercel.ddaiai.com/",
+        "iconLeft": "https://raw.githubusercontent.com/Dooy/chatgpt-web-midjourney-proxy/main/src/assets/avatar.jpg",
         "iconRight": "assets/github.svg",
         "target": "main-iframe"
     }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poixe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+        body {
+            font-family: 'Indie Flower', cursive;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .top-content {
+            margin-top: calc(100vh / 3);
+            text-align: center;
+        }
+        .bottom-content {
+            margin-bottom: calc(100vh / 5);
+            text-align: center;
+        }
+        .link-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #121826;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .link-button:hover {
+            background-color: #121826;
+        }
+        .link-button i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="top-content">
+        <h1 class="text-4xl mb-4">P O I X E</h1>
+        <p class="text-lg mb-1">面向所有人的开放智能体验平台</p>
+        <p class="text-lg">Platform of Open Intelligence eXperiences for Everyone.</p>
+    </div>
+    <div class="bottom-content">
+        <a href="https://github.com/terobox/poixe" target="_blank" class="link-button">
+            <i class="fab fa-github"></i> Github
+        </a>
+    </div>
+</body>
+</html>
