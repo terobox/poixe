@@ -54,9 +54,9 @@ Platform of Open Intelligence eXperiences for Everyone, with ChatGPT-Next-Web, C
 
 ## Get Started
 
-1. Go to the web root dir.
+1. Go to the web root dir
 
-2. Git clone 
+2. Git clone
 
 ```
 git clone https://github.com/terobox/poixe.git
