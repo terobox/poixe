@@ -20,6 +20,7 @@ Platform of Open Intelligence eXperiences for Everyone, with ChatGPT-Next-Web, C
 - Fully static web page design for easy deployment.
 - Well-designed UI, ergonomic and practical.
 - Privacy and security ensured, all data stored locally in the user's browser.
+- Update for Chinese area access, fast speed.
 
 ## 主要功能
 
